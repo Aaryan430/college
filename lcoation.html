@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+        <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/logo.png" alt="">
+            <span>Waste</span>
+        </a>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto" href="index.html">Home</a></li>
+                <li><a class="nav-link scrollto" href="project.html">Your Location</a></li>
+                <li><a class="nav-link scrollto active" href="lcoation.html">Mark Location</a></li>
+                <li><a class="nav-link scrollto" href="report.html">Report</a></li>
+                <li><a class="nav-link scrollto" href="login.html">Login/Sign Up</a></li>
+
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+
+    </div>
+</header>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style type="text/css">
+        #map {
+            width: 700px;
+            height: 500px;
+            margin: auto;
+            margin-top: 90px;
+            box-shadow: blue;
+        }
+        
+        h2 {
+            text-align: center;
+        }
+        
+        .btn-3 {
+            background: #4154f1;
+            background: linear-gradient(0deg, #4154f1 0%, #4154f1 100%);
+            width: 156px;
+            height: 45px;
+            color: whitesmoke;
+            line-height: 39px;
+            padding: 3px;
+            border: none;
+        }
+        
+        .btn-3 span {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .btn-3:before,
+        .btn-3:after {
+            position: absolute;
+            content: "";
+            right: 0;
+            top: 0;
+            background: rgba(2, 126, 251, 1);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-3:before {
+            height: 0%;
+            width: 2px;
+        }
+        
+        .btn-3:after {
+            width: 0%;
+            height: 2px;
+        }
+        
+        .btn-3:hover {
+            background: transparent;
+            box-shadow: none;
+        }
+        
+        .btn-3:hover:before {
+            height: 100%;
+        }
+        
+        .btn-3:hover:after {
+            width: 100%;
+        }
+        
+        .btn-3 span:hover {
+            color: rgba(2, 126, 251, 1);
+        }
+        
+        .btn-3 span:before,
+        .btn-3 span:after {
+            position: absolute;
+            content: "";
+            left: 0;
+            bottom: 0;
+            background: rgba(2, 126, 251, 1);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-3 span:before {
+            width: 2px;
+            height: 0%;
+        }
+        
+        .btn-3 span:after {
+            width: 0%;
+            height: 2px;
+        }
+        
+        .btn-3 span:hover:before {
+            height: 100%;
+        }
+        
+        .btn-3 span:hover:after {
+            width: 100%;
+        }
+        
+        .chosen {
+            margin-top: 10px;
+            background-color: #4154f1;
+        }
+        
+        .center {
+            margin: 0;
+            position: absolute;
+            top: 45%;
+            left: 10%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        
+        h2 {
+            color: aliceblue;
+        }
+        
+        .request {
+            color: aliceblue;
+        }
+        
+        .latlong {
+            color: whitesmoke;
+            text-align: center;
+        }
+        
+        .location {
+            align-items: center;
+        }
+        
+        .thingop {
+            margin-left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .thingok {
+            margin-left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        body{
+  background-image: url("locbg.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 400px 400px;
+}
+.lernmor{
+  position: absolute;
+  top: 48%;
+  left: 6%;
+  margin-top: 1px;
+  color: blue;
+  background-color: rgb(167, 167, 248);
+}
+.lernmor :hover{
+  color: rgb(0, 0, 0);
+  background-color: burlywood;
+}
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+    </style>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+    <title>Mark Location</title>
+</head>
+<script>
+    function noti() {
+        alert("Your Request has been processed");
+    }
+</script>
+
+<body>
+  <div id="container1">
+    
+  </div>
+  
+  <div id="map"></div>
+  
+    <div class="chosen">
+
+
+        <h2>Chosen Location</h2>
+        <form method="post" class="location">
+            <p class="latlong">The latitude and longitude of the marked location is: </p>
+            <input type="text" id="lat" class="thingok" readonly="yes"><br>
+            <input type="text" id="lng" class="thingop" readonly="yes">
+        </form>
+
+    </div>
+    <script type="text/javascript" src="map.js"></script>
+    <div class="container">
+        <div class="center">
+            <button class="custom-btn btn-3" onclick="noti()"><span> <a href="lcoation.html" class="request">   Request Hopper </a></span></button>
+        </div>
+<button id="myBtn" class="lernmor">Learn More</button>
+
+<div id="myModal" class="modal">
+
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Mark a location from Map and then click on Request Hopper to request the Hopper at the marked location</p>
+  </div>
+
+</div>
+    </div>
+      
+    <script>
+        function Openfunction() {
+            document.getElementById("header").style.left = "0px";
+            document.getElementById("menu-button2").style.visibility = "visible";
+            document.getElementById("menu-button").style.visibility = "hidden";
+        }
+
+        function closefunction() {
+            document.getElementById("header").style.left = "-400px";
+            document.getElementById("menu-button2").style.visibility = "hidden";
+            document.getElementById("menu-button").style.visibility = "visible";
+        }
+    </script>
+    <script>
+      var modal = document.getElementById("myModal");
+      
+      var btn = document.getElementById("myBtn");
+      
+      var span = document.getElementsByClassName("close")[0];
+      
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+      
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+      </script>
+</body>
+
+</html>
