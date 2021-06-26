@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-   
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,164 +17,179 @@
     <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  
+
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <style>
-    :root{
-    --primary: #d16144;
-    --dark: #242424;
-    --pure: #FFFFFF;
-    --ternary: #898989;
-    --light: #2F2F2F;
-    --secondary: #070606;
-}
-
-html{
-    scroll-behavior: smooth;
-    width: 100%;
-}
-section.contact .btn-wrapper :hover{
-    border: 4px solid blue;
-    background-color: whitesmoke;
-    color: blue;
-    padding: 10px;
-    border-radius: 5px;
-    transition: 0.1s;
-
-}
-   section.contact .card-wrapper{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 3rem;
-}
-
-section.contact .card-wrapper .card{
-    text-align: center;
-}
-
-section.contact .card-wrapper .card img{
-    margin-bottom: 3rem;
-}
-
-section.contact .card-wrapper .card h2{
-    font-weight: 400;
-    margin-bottom: 1rem;
-}
-
-section.contact .card-wrapper .card h6{
-    font-size: 1rem;
-    color: var(--ternary);
-    font-weight: 400;
-    margin-bottom: 4rem;
-}
-
-section.contact .input-wrap{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-section.contact .input-wrap-2{
-    display: flex;
-    flex-direction: column;
-}
-
-section.contact .input-wrap-2 input{
-    margin-bottom: 2rem;
-}
-
-section.contact input{
-    padding: 0.5rem;
-    border: 1px solid var(--light);
-    font-size: 0.9rem;
-}
-
-section.contact .input-wrap-2 textarea{
-    padding: 0.5rem;
-    border: 1px solid var(--light);
-    font-size: 0.9rem;
-}
-
-section.contact input:focus, section.contact textarea:focus{
-    outline: none;
-}
-section.contact .input-wrap :hover{
-    border: 3px solid black;
-    transition: 0.3s;
-    border-radius: 5px;
-}
-section.contact .input-wrap-2 :hover{
-    border: 3px solid black;
-    transition: 0.3s;
-    border-radius: 5px;
-}
-section.contact .btn-wrapper{
-    text-align: center;
-    margin-top: 2rem;
-    padding: 10px;
-}
-:placeholder-shown{
-    color: blue;
-}
-
-.section-heading{
-    align-items: center;
-    color: #0008ff;
-    margin: 20px;
-    margin-left: 42%;
-    margin-right: 46%;
-    border: 2px solid blue;
-    border-radius: 10px;
-    padding: 11px;
-}
+     :root {
+        --primary: #d16144;
+        --dark: #242424;
+        --pure: #FFFFFF;
+        --ternary: #898989;
+        --light: #2F2F2F;
+        --secondary: #070606;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+        width: 100%;
+    }
+    
+    section.contact .btn-wrapper :hover {
+        border: 4px solid blue;
+        background-color: whitesmoke;
+        color: blue;
+        padding: 10px;
+        border-radius: 5px;
+        transition: 0.5s;
+        transform: scale(1.2);
+    }
+    
+    section.contact .card-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 3rem;
+    }
+    
+    section.contact .card-wrapper .card {
+        text-align: center;
+    }
+    
+    section.contact .card-wrapper .card img {
+        margin-bottom: 3rem;
+    }
+    
+    section.contact .card-wrapper .card h2 {
+        font-weight: 400;
+        margin-bottom: 1rem;
+    }
+    
+    section.contact .card-wrapper .card h6 {
+        font-size: 1rem;
+        color: var(--ternary);
+        font-weight: 400;
+        margin-bottom: 4rem;
+    }
+    
+    section.contact .input-wrap {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    section.contact .input-wrap-2 {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    section.contact .input-wrap-2 input {
+        margin-bottom: 2rem;
+    }
+    
+    section.contact input {
+        padding: 0.5rem;
+        border: 1px solid var(--light);
+        font-size: 0.9rem;
+    }
+    
+    section.contact .input-wrap-2 textarea {
+        padding: 0.5rem;
+        border: 1px solid var(--light);
+        font-size: 0.9rem;
+    }
+    
+    section.contact input:focus,
+    section.contact textarea:focus {
+        outline: none;
+    }
+    
+    section.contact .input-wrap :hover {
+        border: 3px solid blue;
+        transition: 0.3s;
+        border-radius: 5px;
+        transform: scale(1.05);
+    }
+    
+    section.contact .input-wrap-2 :hover {
+        border: 3px solid blue;
+        transition: 0.3s;
+        border-radius: 5px;
+        transform: scale(1.03);
+    }
+    
+    section.contact .btn-wrapper {
+        text-align: center;
+        margin-top: 2rem;
+        padding: 10px;
+    }
+    
+     :placeholder-shown {
+        color: blue;
+    }
+    
+    .section-heading {
+        align-items: center;
+        color: #0008ff;
+        margin: 20px;
+        margin-left: 40%;
+        margin-right: 46%;
+        border-left: 20px solid blue;
+        border-bottom: 5px solid blue;
+        border-radius: 100px;
+        padding: 11px;
+    }
 </style>
 <script>
     function noti() {
         alert("Thank You! Your complaint has been registered, We will investigate your complaint");
     }
 </script>
+
 <body>
     <header id="header" class="header fixed-top">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-    
-          <a href="index.html" class="logo d-flex align-items-center">
-            <img src="assets/img/logo.png" alt="">
-            <span>Waste</span>
-          </a>
-    
-          <nav id="navbar" class="navbar">
-            <ul>
-              <li><a class="nav-link scrollto" href="index.html">Home</a></li>
-              <li><a class="nav-link scrollto" href="project.html">Your Location</a></li>
-              <li><a class="nav-link scrollto" href="lcoation.html">Mark Location</a></li>
-              <li><a class="nav-link scrollto active" href="report.html">Report</a></li>
-              <li><a class="nav-link scrollto" href="login.html">Login/Sign Up</a></li>
-              
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-          </nav>
-    
+
+            <a href="index.html" class="logo d-flex align-items-center">
+                <img src="assets/img/logo.png" alt="">
+                <span>Waste</span>
+            </a>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto" href="index.html">Home</a></li>
+                    <li><a class="nav-link scrollto" href="project.html">Your Location</a></li>
+                    <li><a class="nav-link scrollto" href="lcoation.html">Mark Location</a></li>
+                    <li><a class="nav-link scrollto active" href="report.html">Report</a></li>
+                    <li><a class="nav-link scrollto" href="login.html">Login/Sign Up</a></li>
+
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+
         </div>
-      </header>
-    
-    <section id = "contact" class = "contact">
-        <div class = "container">
-            <h3 class = "section-heading">
+    </header>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h3 class="section-heading">
                 Report <span>Us</span>
             </h3>
-            
-            <form action = "">
-                <div class = "input-wrap">
-                    <input type="text" placeholder = "Your Name *">
-                    <input type="email" placeholder = "Your Email *">
+
+            <form action="">
+                <div class="input-wrap">
+                    <input type="text" placeholder="Your First Name *">
+                    <input type="email" placeholder="Your Last Name *">
                 </div>
-                <div class = "input-wrap-2">
-                    <textarea name="" id="" cols="30" rows="10" placeholder = "Write your Message here"></textarea>
+                <div class="input-wrap">
+                    <input type="text" placeholder="Your Phone No. *">
+                    <input type="email" placeholder="Your Email *">
                 </div>
-                <div class = "btn-wrapper">
-                    <button class = "btn btn-primary" onclick="noti()">
+                <div class="input-wrap-2">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Write your Message here"></textarea>
+                </div>
+                <div class="btn-wrapper">
+                    <button class="btn btn-primary" onclick="noti()">
                         Send Message
                     </button>
                 </div>
@@ -194,4 +210,5 @@ section.contact .btn-wrapper{
         }
     </script>
 </body>
+
 </html>
