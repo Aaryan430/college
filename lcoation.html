@@ -149,6 +149,7 @@
         
         h2 {
             color: aliceblue;
+            padding-top: 20px;
         }
         
         .request {
@@ -158,26 +159,31 @@
         .latlong {
             color: whitesmoke;
             text-align: center;
+            padding-top: 10px;
         }
         
         .location {
             align-items: center;
+            padding-bottom: 30px;
+            text-align: center;
         }
         
         .thingop {
-            margin-left: 50%;
-            transform: translate(-50%, -50%);
+            margin-left: 3%;
+            padding: 5px;
+            margin-top: 10px;
         }
         
         .thingok {
-            margin-left: 50%;
-            transform: translate(-50%, -50%);
+            margin-top: 10px;
+            padding: 5px;
+            margin-left: 4%;
         }
         
         .lernmor {
             position: absolute;
-            top: 48%;
-            left: 6%;
+            top: 50%;
+            left: 6.5%;
             margin-top: 1px;
             color: blue;
             background-color: rgb(167, 167, 248);
@@ -247,8 +253,7 @@
         <h2>Chosen Location</h2>
         <form method="post" class="location">
             <p class="latlong">The latitude and longitude of the marked location is: </p>
-            <input type="text" id="lat" class="thingok" readonly="yes"><br>
-            <input type="text" id="lng" class="thingop" readonly="yes">
+            Latitude: <input type="text" id="lat" class="thingok" readonly="yes"><br> Longitude: <input type="text" id="lng" class="thingop" readonly="yes">
         </form>
 
     </div>
